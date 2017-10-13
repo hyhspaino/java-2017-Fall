@@ -12,25 +12,23 @@ import javax.swing.JPanel;
  */
 public class Traffic_light {
 	private String color;
+	private JFrame frame;
 /**
  * Constructs and set the traffic light status
  * @param color light color
  */
-	public Traffic_light(String color) {
-		this.color = color;
+	public Traffic_light() {
 	}
 /**
  * show the Traffic light 
  */
 	public void show_traffic_light() {
-
-		if (color.equals("green")) {
-			Green_light();
-		} else if (color.equals("red")) {
-			Red_light();
-		} else {
-			Yellow_light();
-		}
+		frame = new JFrame();
+		frame.setSize(150, 120);
+		frame.setTitle("Traffic_light");
+			Green_light(); 
+			Red_light(); 
+			Yellow_light(); 
 
 	}
 	
@@ -38,9 +36,7 @@ public class Traffic_light {
 	 * draw the yellow case and frame
 	 */
 	private void Yellow_light() {
-		JFrame frame = new JFrame();
-		frame.setSize(150, 120);
-		frame.setTitle("Traffic_light");
+	
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setVisible(true);
 		JPanel panel = new JPanel(new GridLayout(1, 3, 0, 0));
@@ -66,10 +62,7 @@ public class Traffic_light {
 /**
  * draw the red case and frame
  */
-	private void Red_light() {
-		JFrame frame = new JFrame();
-		frame.setSize(150, 120);
-		frame.setTitle("Traffic_light");
+	private void Red_light() { 
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setVisible(true);
 		JPanel panel = new JPanel(new GridLayout(1, 3, 0, 0));
@@ -95,10 +88,7 @@ public class Traffic_light {
 /**
  * draw the green case and frame
  */
-	private void Green_light() {
-		JFrame frame = new JFrame();
-		frame.setSize(150, 120);
-		frame.setTitle("Traffic_light");
+	private void Green_light() { 
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setVisible(true);
 		JPanel panel = new JPanel(new GridLayout(1, 3, 0, 0));
