@@ -1,9 +1,10 @@
 package problem3;
-
 /**
-A bank account has a balance that can be changed by 
+ * A bank account has a balance that can be changed by 
 deposits and withdrawals.
-*/
+ * @author hyh
+ *
+ */
 public class BankAccount
 {  
 private double balance;
