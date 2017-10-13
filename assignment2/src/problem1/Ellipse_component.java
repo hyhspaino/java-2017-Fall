@@ -15,7 +15,10 @@ public class Ellipse_component extends JComponent {
 	double x;
 	double y;
 	Color color;
-	public  void paintComponent(Graphics g) {// Construct a ellipse and draw it
+	/**
+	 * Construct a ellipse and draw it
+	 */
+	public  void paintComponent(Graphics g) {
 		Graphics2D g2 = (Graphics2D) g;
 		Ellipse2D.Double ellipse1 = new Ellipse2D.Double(x, y, 50, 50);
 		// Draw ellipse
