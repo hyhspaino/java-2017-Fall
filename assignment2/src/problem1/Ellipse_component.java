@@ -9,17 +9,15 @@ import java.awt.geom.Ellipse2D;
 import javax.swing.JComponent;
 
 /**
- * draw a circle for given x,y and color
+ * draw the 3 traffic lights
  * 
  * @author hyh
  *
  */
 public class Ellipse_component extends JComponent {
-	// double x;
-	// double y;
-	// Color color;
+
 	/**
-	 * Construct a ellipse and draw it
+	 * Construct traffic lights and draw it
 	 */
 	public void paintComponent(Graphics g) {
 		Graphics2D g2 = (Graphics2D) g;
@@ -30,9 +28,9 @@ public class Ellipse_component extends JComponent {
 		g2.draw(box1);
 		Rectangle box2 = new Rectangle(145, 25, 60, 240);
 		g2.draw(box2);
-
+		// Draw green traffic light
 		Ellipse2D.Double ellipse1 = new Ellipse2D.Double(50, 50, 50, 50);
-		// Draw ellipse
+
 		g2.setColor(Color.GREEN);
 		g2.draw(ellipse1);
 		g2.fill(ellipse1);
@@ -45,8 +43,7 @@ public class Ellipse_component extends JComponent {
 		g2.draw(ellipse3);
 		g2.fill(ellipse3);
 
-	
-
+		// Draw red traffic light
 		Ellipse2D.Double red_ellipse = new Ellipse2D.Double(250, 50, 50, 50);
 		// Draw ellipse
 		g2.setColor(Color.WHITE);
@@ -61,6 +58,7 @@ public class Ellipse_component extends JComponent {
 		g2.draw(red_ellips3);
 		g2.fill(red_ellips3);
 
+		// Draw yellow traffic light
 		Ellipse2D.Double yellow_ellipse1 = new Ellipse2D.Double(150, 50, 50, 50);
 		// Draw ellipse
 		g2.setColor(Color.white);
