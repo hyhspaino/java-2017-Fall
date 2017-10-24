@@ -35,6 +35,9 @@ public class Map {
 				if (array[i][j] < flood_height) {
 					System.out.print("*");
 					System.out.print(" ");
+				} else {
+					System.out.print("_");
+					System.out.print(" ");
 				}
 			}
 			System.out.println();
@@ -50,10 +53,11 @@ public class Map {
 				if (array[i][j] < height) {
 					x = i;
 					y = j;
+					height=array[i][j];
 				}
 			}
 		}
-		System.out.println("The lowest_point is " + x + " " + y);
+		System.out.println("The lowest point is (" + (x+1) + "£¬" + (y+1) + ")"+height);
 	}
 
 	public void get_highest_point() {
@@ -63,12 +67,13 @@ public class Map {
 		for (int i = 0; i < this.x; i++) {
 			for (int j = 0; j < this.y; j++) {
 				if (array[i][j] > height) {
+					height=array[i][j];
 					x = i;
 					y = j;
 				}
 			}
 		}
-		System.out.println("The heighest point is " + x + " " + y);
+		System.out.println("The heighest point is (" + (x+1) + "£¬" + (y+1) + ")"+height);
 	}
 
 }

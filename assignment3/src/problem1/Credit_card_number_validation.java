@@ -3,28 +3,24 @@ package problem1;
 public class Credit_card_number_validation {
 	private String credit_card;
 	private boolean validation;
-    
-	
-	public  Credit_card_number_validation()
-	{
-		
+
+	public Credit_card_number_validation() {
+
 	}
-	
-	
-	public  Credit_card_number_validation(String number)
-	{
+
+	public Credit_card_number_validation(String number) {
 		credit_card = remove_spaces_dashes(number);
 	}
+
 	public void set_credit_card_number(String number) {
 		credit_card = remove_spaces_dashes(number);
 	}
 
 	private String remove_spaces_dashes(String number) {
-		for (int i = 0; i < number.length() - 1; i++) {
-			if (number.charAt(i) == '-' || number.charAt(i) == ' ') {
-				number.replace(number.charAt(i), '\0');
-			}
-		}
+
+			number=number.replace("-", "");
+			number=number.replace(" ", "");
+	
 		return number;
 	}
 
@@ -62,8 +58,5 @@ public class Credit_card_number_validation {
 			validation = false;
 		return validation;
 	}
-
-	
-	
 
 }
