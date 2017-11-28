@@ -1,5 +1,5 @@
 package problem1;
-
+//http://www.chegg.com/homework-help/questions-and-answers/declare-class-combolock-works-like-combination-lock-gym-locker-lock-constructed-combinatio-q21527699
 public class ComboLock {
 
 	private int secret1;
@@ -46,7 +46,7 @@ public class ComboLock {
 			System.out.println("fail to unlocked secret 2");
 	}
 
-	
+
 
 	public boolean open() {
 		return step == 3;
@@ -56,20 +56,20 @@ public class ComboLock {
 		this.scroll(number);
 		if (step>1||shouldUnlock(secret1) == true) {
 			System.out.println("Secret 1 unlocked");}
+		else
+			System.out.println("fail to unlock secret 1");
+		if (step==2) {
+			if (shouldUnlock(secret3) == true) {
+				System.out.println("Combo lock unlocked");}
 			else
-				System.out.println("fail to unlock secret 1");
-			if (step==2) {
-				if (shouldUnlock(secret3) == true) {
-					System.out.println("Combo lock unlocked");}
-					else
-						System.out.println("fail to unlock secret 3");
-				} 
-			
-		}
+				System.out.println("fail to unlock secret 3");
+		} 
+
+	}
 
 	public boolean shouldUnlock(int secret) {
 		if (this.dial == secret) {
-						step++;
+			step++;
 			return true;
 		} else {
 			return false;
