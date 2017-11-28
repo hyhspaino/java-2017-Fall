@@ -54,7 +54,7 @@ public class ComboLock {
 
 	public void turnRight(int number) {
 		this.scroll(number);
-		if (shouldUnlock(secret1) == true||secret1==-1) {
+		if (step>1||shouldUnlock(secret1) == true) {
 			System.out.println("Secret 1 unlocked");}
 			else
 				System.out.println("fail to unlock secret 1");
@@ -69,8 +69,7 @@ public class ComboLock {
 
 	public boolean shouldUnlock(int secret) {
 		if (this.dial == secret) {
-			secret = -1;
-			step++;
+						step++;
 			return true;
 		} else {
 			return false;
