@@ -22,7 +22,7 @@ public class ComboLock {
 
 	public void scroll(int number) {
 		if (dial + number > 39) {
-			if (number >= 39) {
+			if (number > 39) {
 				dial += number;
 				while (dial >= 39)
 					dial -= 39;
@@ -30,7 +30,7 @@ public class ComboLock {
 				dial += number - 39;
 		} else if (dial + number < 0) {
 			dial = (dial + number) * -1;
-			while (dial >= 39)
+			while (dial > 39)
 				dial -= 39;
 		} else
 			dial += number;
