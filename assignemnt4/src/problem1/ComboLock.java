@@ -20,35 +20,23 @@ public class ComboLock {
 		dial = 0;
 	}
 
-//	public void scroll(int number) {
-//		if (dial + number > 39) {
-//			if (number > 39) {
-//				dial += number;
-//				while (dial >= 39)
-//					dial -= 39;
-//			} else
-//				dial += number - 39;
-//		} else if (dial + number < 0) {
-//			dial = (dial + number) * -1;
-//			while (dial > 39)
-//				dial -= 39;
-//		} else
-//			dial += number;
-//
-//	}
-	public void scroll(int ticks) { 
-        if (this.dial + ticks > 39) { 
-            if (ticks >= 39) { 
-                this.dial += ticks - 39; 
-            } else if (this.dial >= 39) { 
-            } 
-        } else if (this.dial + ticks < 0) { 
-            this.dial += 40 + ticks; 
-            this.dial += ticks - 40; 
-        } else { 
-            this.dial += ticks; 
-        } 
-    } 
+	public void scroll(int number) {
+		if (dial + number > 39) {
+			if (number > 39) {
+				dial += number;
+				while (dial >= 39)
+					dial -= 39;
+			} else
+				dial += number - 39;
+		} else if (dial + number < 0) {
+			dial+=number;
+			dial%=39;
+			dial+=39;
+		} else
+			dial += number;
+
+	}
+
 	public void turnLeft(int number) {
 		this.scroll(-number);
 
