@@ -12,6 +12,7 @@ public class ComboLock {
 		this.secret1 = secret1;
 		this.secret2 = secret2;
 		this.secret3 = secret3;
+		dial=0;
 		step = 0;
 
 	}
@@ -54,10 +55,11 @@ public class ComboLock {
 
 	public void turnRight(int number) {
 		this.scroll(number);
-		if (step>1||shouldUnlock(secret1) == true) {
+		if(step==0) {
+		if (shouldUnlock(secret1) == true) {
 			System.out.println("Secret 1 unlocked");}
 		else
-			System.out.println("fail to unlock secret 1");
+			System.out.println("fail to unlock secret 1");}
 		if (step==2) {
 			if (shouldUnlock(secret3) == true) {
 				System.out.println("Combo lock unlocked");}
