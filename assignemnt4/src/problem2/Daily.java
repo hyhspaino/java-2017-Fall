@@ -5,7 +5,7 @@ public class Daily extends Appointment {
 		super(desc, d);
 	}
 
-	public boolean occurOn(Date date) {
+	public boolean occursOn(Date date) {
 		return true;
 	}
 
