@@ -40,13 +40,13 @@ public class ComboLock {
 
 	public void turnLeft(int number) {
 		this.scroll(-number);
-
+         if(step==1) {
 		if (shouldUnlock(secret2) == true) {
 			System.out.println("Secret 2 unlocked");
 		} else
 			System.out.println("fail to unlocked secret 2");
 	}
-
+	}
 
 
 	public boolean open() {
