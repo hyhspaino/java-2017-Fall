@@ -1,10 +1,10 @@
 package problem5;
 
 public class AirplaneClass {
-	private int rows;
-	private int columns;
-	Seat[][] classSeat = new Seat[rows][columns];
-	private String className;
+	protected int rows;
+	protected int columns;
+	public Seat[][] classSeat;
+	protected String className;
 
 	public int getRows() {
 		return rows;
@@ -20,6 +20,17 @@ public class AirplaneClass {
 	public AirplaneClass(int rows, int columns, String className) {
 		this.rows = rows;
 		this.columns = columns;
+		this.classSeat = new Seat[rows][];
+		 for(int i=0; i<classSeat.length; ++i){
+			 classSeat[i]=new Seat[columns];
+	       }
+		 
+		 
+		 for(int i=0; i<classSeat.length; ++i){
+			 for(int j=0; j<columns; ++j){
+			 classSeat[i][j]=new Seat(null,0,null);
+			 }
+	       }
 		this.className = className;
 	}
 
