@@ -6,7 +6,7 @@ public class BookingAirplane {
 	public static void main(String[] arg) {
 		AirplaneClass first = new FirstClass(5, 4, "First Class");
 		first.FillTheSeatNumber(1);
-		AirplaneClass economy = new FirstClass(15, 6, "Economy Class");
+		AirplaneClass economy = new EconomyClass(15, 6, "Economy Class");
 		economy.FillTheSeatNumber(21);
 
 		System.out.println("Please enter the number of passengers travelling ");
