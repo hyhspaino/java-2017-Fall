@@ -14,23 +14,36 @@ public class FormatTester {
 		BufferedReader br = new BufferedReader(reader); 
 		String line = "";
 		line = br.readLine();
-		while (line != null) {
-			line = br.readLine(); 
-		}
+//		while (line != null) {
+		//	line = br.readLine(); 
+//		}
 		String SplitBy = " ";
 		String[] temp = line.split(SplitBy);
 		Integer[] number = new Integer[temp.length];
-		for (int i = 0; i < number.length; i++)
-			number[i] = Integer.parseInt(temp[i]);
+		for (int i = 0; i < number.length; i++) {
+			if (temp[i].length() ==0) {
+
+				number[i]=null;
+				} 
+			else{
+				
+				number[i] = Integer.parseInt(temp[i]);
+			}
+			
+		}
+			
 		AccountingFormatter a1= new AccountingFormatter();
+		
+		
+		
 		for (int i = 0; i < number.length; i++)
 			System.out.println(a1.format(number[i]));
-		BaseFormatter a2= new BaseFormatter(8);
-		for (int i = 0; i < number.length; i++)
-			System.out.println(a2.format(number[i]));
-		BaseFormatter a3= new BaseFormatter(2);
-		for (int i = 0; i < number.length; i++)
-			System.out.println(a3.format(number[i]));
+//		BaseFormatter a2= new BaseFormatter(8);
+//		for (int i = 0; i < number.length; i++)
+//			System.out.println(a2.format(number[i]));
+//		BaseFormatter a3= new BaseFormatter(2);
+//		for (int i = 0; i < number.length; i++)
+//			System.out.println(a3.format(number[i]));
 		DecimalSeparatorFormatter a4= new DecimalSeparatorFormatter();
 		for (int i = 0; i < number.length; i++)
 			System.out.println(a4.format(number[i]));
