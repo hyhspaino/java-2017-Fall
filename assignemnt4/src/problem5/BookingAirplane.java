@@ -13,11 +13,11 @@ public class BookingAirplane {
 		Scanner in = new Scanner(System.in);
 		int passengers = in.nextInt();
 		while (passengers > 0) {
-			System.out.println("Please enter Airplane Class (First Class or Economy Class)");
-			String c = in.nextLine();
-			if (c.equals("First Class")) {
+			System.out.println("Please enter Airplane Class (First_Class or Economy_Class)");
+			String c = in.next();
+			if (c.equalsIgnoreCase("First_Class")) {
 				System.out.println("the seating preference (aisle or window in first class ).");
-				String position = in.nextLine();
+				String position = in.next();
 				int seat = first.findSeat(position);
 				if (seat != -1) {
 					System.out.println("Your seat number is " + seat);
@@ -25,15 +25,17 @@ public class BookingAirplane {
 					System.out.println("The operation failed");
 			} else {
 				System.out.println("the seating preference (aisle, center, or window in economy).");
-				String position = in.nextLine();
-				int seat = first.findSeat(position);
+				String position = in.next();
+				int seat = economy.findSeat(position);
 				if (seat != -1) {
 					System.out.println("Your seat number is " + seat);
 				} else
 					System.out.println("The operation failed");
-				passengers--;
+				
 			}
+			passengers--;
 		}
+
 	}
 
 }

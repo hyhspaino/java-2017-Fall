@@ -20,11 +20,11 @@ public class AirplaneClass {
 	public AirplaneClass(int rows, int columns, String className) {
 		this.rows = rows;
 		this.columns = columns;
-		this.classSeat = new Seat[rows][];
-		 for(int i=0; i<classSeat.length; ++i){
-			 classSeat[i]=new Seat[columns];
-	       }
-		 
+		this.classSeat = new Seat[rows][columns];
+//		 for(int i=0; i<classSeat.length; ++i){
+//			 classSeat[i]=new Seat[columns];
+//	       }
+//		 
 		 
 		 for(int i=0; i<classSeat.length; ++i){
 			 for(int j=0; j<columns; ++j){
