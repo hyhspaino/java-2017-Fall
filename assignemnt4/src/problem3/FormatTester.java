@@ -11,15 +11,24 @@ public class FormatTester {
 		String pathname = "./src/Tester.txt";
 		File filename = new File(pathname); 
 		InputStreamReader reader = new InputStreamReader(new FileInputStream(filename)); 
+		@SuppressWarnings("resource")
 		BufferedReader br = new BufferedReader(reader); 
 		String line = "";
 		line = br.readLine();
 //		while (line != null) {
+<<<<<<< HEAD
+//			line = br.readLine(); 
+=======
 		//	line = br.readLine(); 
+>>>>>>> efe65d8456fe44daea6c9cd53c797c2001e08bfb
 //		}
 		String SplitBy = " ";
 		String[] temp = line.split(SplitBy);
 		Integer[] number = new Integer[temp.length];
+<<<<<<< HEAD
+		for (int i = 0; i < number.length; i++) 
+			number[i] = Integer.parseInt(temp[i]);
+=======
 		for (int i = 0; i < number.length; i++) {
 			if (temp[i].length() ==0) {
 
@@ -32,6 +41,7 @@ public class FormatTester {
 			
 		}
 			
+>>>>>>> efe65d8456fe44daea6c9cd53c797c2001e08bfb
 		AccountingFormatter a1= new AccountingFormatter();
 		
 		
