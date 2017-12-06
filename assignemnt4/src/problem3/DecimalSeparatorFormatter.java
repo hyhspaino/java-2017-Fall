@@ -8,7 +8,7 @@ public class DecimalSeparatorFormatter implements NumberFormatter {
 		String s = m.toString();
 		char[] arr = s.toCharArray();
 		int len = arr.length;
-		len /= len + len;
+		len %= len + len;
 		char[] array = new char[len];
 		int temp = 0;
 		for (int i = 0; i < array.length; i++) {
@@ -19,6 +19,8 @@ public class DecimalSeparatorFormatter implements NumberFormatter {
 			array[i] = arr[temp];
 			temp++;
 		}
+//		for(int i =0; i<array.length;i++)
+//			System.out.println(array[i]);
 		return array.toString();
 	}
 
