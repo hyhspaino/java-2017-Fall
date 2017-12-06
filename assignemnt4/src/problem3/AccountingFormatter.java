@@ -6,6 +6,7 @@ public class AccountingFormatter implements NumberFormatter{
 	
 		Integer m = n;
 		if (m < 0) {
+			m = -m;
 			String s = "(" + m.toString() + ")";
 			return s;
 		}
