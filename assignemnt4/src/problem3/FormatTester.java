@@ -38,6 +38,8 @@ public class FormatTester {
 		
 		for (int i = 0; i < number.length; i++)
 			System.out.println(a1.format(number[i]));
+		
+		
 //		BaseFormatter a2= new BaseFormatter(8);
 //		for (int i = 0; i < number.length; i++)
 //			System.out.println(a2.format(number[i]));
@@ -47,9 +49,9 @@ public class FormatTester {
 		DecimalSeparatorFormatter a4= new DecimalSeparatorFormatter();
 		for (int i = 0; i < number.length; i++)
 			System.out.println(a4.format(number[i]));
-		DefaultFormatter a5= new DefaultFormatter();
-		for (int i = 0; i < number.length; i++)
-			System.out.println(a5.format(number[i]));
+//		DefaultFormatter a5= new DefaultFormatter();
+//		for (int i = 0; i < number.length; i++)
+//			System.out.println(a5.format(number[i]));
 	}
 	
 }
