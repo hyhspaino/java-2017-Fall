@@ -10,27 +10,29 @@ String csvFile;
 public CVSReader(String path) {
 	csvFile=path;
 }
-//	public static void main(String[] args) {
-//
-//		String csvFile = "/Users/mkyong/csv/country.csv";
-//		String line = "";
-//		String cvsSplitBy = ",";
-//
-//		try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
-//
-//			while ((line = br.readLine()) != null) {
-//
-//				String[] country = line.split(cvsSplitBy);
-//
-//				System.out.println("Country [code= " + country[4] + " , name=" + country[5] + "]");
-//
-//			}
-//
-//		} catch (IOException e) {
-//			e.printStackTrace();
-//		}
-//
-//	}
+
+
+	public static void main(String[] args) {
+
+		String csvFile = "./src/test.csv";
+		String line = "";
+		String cvsSplitBy = ",";
+
+		try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
+
+			while ((line = br.readLine()) != null) {
+
+				String[] country = line.split(cvsSplitBy);
+
+				System.out.println("Country [code= " + country[0] + " , name=" + country[1] + "]");
+
+			}
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+	}
 
 	public int numberOfRows() throws IOException {
 		
@@ -62,6 +64,7 @@ public CVSReader(String path) {
 					return temp.length;
 			}
 		}
+		return counter;
 
 	}
 
@@ -84,6 +87,7 @@ public CVSReader(String path) {
 			}
 
 		}
+		return cvsSplitBy;
 
 	}
 }
