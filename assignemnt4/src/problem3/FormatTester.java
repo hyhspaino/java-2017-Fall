@@ -16,32 +16,13 @@ public class FormatTester {
 		String line = "";
 		line = br.readLine();
 //		while (line != null) {
-<<<<<<< HEAD
 //			line = br.readLine(); 
-=======
-		//	line = br.readLine(); 
->>>>>>> efe65d8456fe44daea6c9cd53c797c2001e08bfb
 //		}
 		String SplitBy = " ";
 		String[] temp = line.split(SplitBy);
 		Integer[] number = new Integer[temp.length];
-<<<<<<< HEAD
 		for (int i = 0; i < number.length; i++) 
 			number[i] = Integer.parseInt(temp[i]);
-=======
-		for (int i = 0; i < number.length; i++) {
-			if (temp[i].length() ==0) {
-
-				number[i]=null;
-				} 
-			else{
-				
-				number[i] = Integer.parseInt(temp[i]);
-			}
-			
-		}
-			
->>>>>>> efe65d8456fe44daea6c9cd53c797c2001e08bfb
 		AccountingFormatter a1= new AccountingFormatter();
 		
 		
