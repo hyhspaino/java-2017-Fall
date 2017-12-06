@@ -4,91 +4,63 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class CVSReader {
-String csvFile;
-public CVSReader(String path) {
-	csvFile=path;
-}
+	String csvFile;
+	ArrayList<String> strArray = new ArrayList<String>();
 
+	public CVSReader(String path) {
 
-	public static void main(String[] args) {
-
-		String csvFile = "./src/test.csv";
 		String line = "";
-		String cvsSplitBy = ",";
-
-		try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
-
+		try (BufferedReader br = new BufferedReader(new FileReader(path))) {
 			while ((line = br.readLine()) != null) {
-
-				String[] country = line.split(cvsSplitBy);
-
-				System.out.println("Country [code= " + country[0] + " , name=" + country[1] + "]");
+				this.strArray.add(line);
 
 			}
-
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+	}
 
+	public static void main(String[] args) throws IOException {
+
+		String csvFile = "./src/test.csv";
+		CVSReader newcsv = new CVSReader(csvFile);
+		int number = newcsv.numberOfRows();
+		int numberOfFields = newcsv.numberOfFields();
+		String field = newcsv.field(1, 1);
+		System.out.println(number + "行" + numberOfFields + "列");
+
+		System.out.println("是" + field);
 	}
 
 	public int numberOfRows() throws IOException {
-		
-		String line = "";
-		int counter = 0;
-		try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
-			while ((line = br.readLine()) != null) {
-				counter++;
-			}
-		}
-		return counter;
+		return strArray.size();
 	}
 
-	public int numberOfFields(int row) throws FileNotFoundException, IOException {
-		
-		String line = "";
+	public int numberOfFields() {
+		String line = strArray.get(0);
 		String cvsSplitBy = ",";
 
-		int counter = 0;
-		try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
+		String[] country = line.split(cvsSplitBy);
 
-			while ((line = br.readLine()) != null) {
-
-				String[] temp = line.split(cvsSplitBy);
-
-				counter++;
-
-				if (counter == row)
-					return temp.length;
-			}
-		}
-		return counter;
+		//		System.out.println("Country [code= " + country[0] + " , name=" + country[1] + "]");
+		return country.length;
 
 	}
 
-	public String field(int row, int column) throws FileNotFoundException, IOException {
+	public String field(int row, int column) {
 
-		
-		String line = "";
+		String line = strArray.get(row - 1);
+
 		String cvsSplitBy = ",";
-		int counter = 0;
 
-		try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
+		String[] country = line.split(cvsSplitBy);
 
-			while ((line = br.readLine()) != null) {
-
-				String[] temp = line.split(cvsSplitBy);
-				counter++;
-				if (counter == row) {
-					return temp[column];
-				}
-			}
-
-		}
-		return cvsSplitBy;
+		//		System.out.println("Country [code= " + country[0] + " , name=" + country[1] + "]");
+		return country[column - 1];
 
 	}
+
 }
-
