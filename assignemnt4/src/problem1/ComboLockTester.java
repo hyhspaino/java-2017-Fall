@@ -1,7 +1,7 @@
 package problem1;
 
 /**
- * A class toTest combo lock
+ * this is a  class to Test combo lock
  * 
  * @author hyh
  *

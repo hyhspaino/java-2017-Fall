@@ -23,17 +23,17 @@ public class CVSReader {
 		}
 	}
 
-	public static void main(String[] args) throws IOException {
-
-		String csvFile = "./src/test.csv";
-		CVSReader newcsv = new CVSReader(csvFile);
-		int number = newcsv.numberOfRows();
-		int numberOfFields = newcsv.numberOfFields();
-		String field = newcsv.field(1, 1);
-		System.out.println(number + "行" + numberOfFields + "列");
-
-		System.out.println("是" + field);
-	}
+//	public static void main(String[] args) throws IOException {
+//
+//		String csvFile = "./src/test.csv";
+//		CVSReader newcsv = new CVSReader(csvFile);
+//		int number = newcsv.numberOfRows();
+//		int numberOfFields = newcsv.numberOfFields();
+//		String field = newcsv.field(1, 1);
+//		System.out.println(number + "" + numberOfFields + "");
+//
+//		System.out.println("" + field);
+//	}
 
 	public int numberOfRows() throws IOException {
 		return strArray.size();

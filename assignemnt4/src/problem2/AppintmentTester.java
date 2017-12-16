@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
- * a class to test appointment
+ * This is a class to test appointment
  * 
  * @author hyh
  *

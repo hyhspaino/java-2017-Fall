@@ -2,6 +2,12 @@ package problem5;
 
 import java.util.Scanner;
 
+/**
+ * This is a test class for booking airplane
+ * 
+ * @author hyh
+ *
+ */
 public class BookingAirplane {
 	public static void main(String[] arg) {
 		AirplaneClass first = new FirstClass(5, 4, "First Class");
@@ -31,7 +37,7 @@ public class BookingAirplane {
 					System.out.println("Your seat number is " + seat);
 				} else
 					System.out.println("The operation failed");
-				
+
 			}
 			passengers--;
 		}

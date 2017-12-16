@@ -9,7 +9,8 @@ package problem3;
 public class DecimalSeparatorFormatter implements NumberFormatter {
 	/**
 	 * Give a Decimal Separator format number
-	 *  @return
+	 * 
+	 * @return Decimal Separator format number
 	 */
 	public String format(int n) {
 		Integer m = n;
@@ -42,6 +43,5 @@ public class DecimalSeparatorFormatter implements NumberFormatter {
 	}
 
 }
-
 
 
